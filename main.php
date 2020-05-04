@@ -1,5 +1,5 @@
 <?php
-/*Plugin Name: Post - Child Page Grid or List for bootScore
+/*Plugin Name: Post / Page Grid / List for bootScore
 Plugin URI: https://bootscore.me/plugins/post-page-grid-list/
 Description: Displays posts from category or child pages from parent id in your post or page via shortcode. Post Grid [post-grid type="post" category="documentation, category-default" order="ASC" orderby="title" posts="6"], Post List [post-list type="post" category="documentation, category-default" order="DESC" orderby="date" posts="6"], Child Page Grid [post-grid type="page" post_parent="413" order="ASC" orderby="title" posts="6"], Child Page List [post-list type="page" post_parent="413" order="DESC" orderby="date"]
 Version: 1.0.0

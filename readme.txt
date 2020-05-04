@@ -1,4 +1,4 @@
-=== Post Grid ===
+=== Post / Page Grid / List ===
 
 Contributors: craftwerk
 
