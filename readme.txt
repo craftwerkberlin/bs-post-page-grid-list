@@ -5,7 +5,7 @@ Contributors: craftwerk
 Requires at least: 4.5
 Tested up to: 5.5.1
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,9 +23,9 @@ Post / Page Grid / List for bootScore WordPress Theme, Copyright 2020 Bastian Kr
 
 Use a shortcode like this to display posts in a page:
 
-[post-grid type="post" category="sample-category" order="ASC" orderby="title" posts="12"]
+[bs-post-grid type="post" category="sample-category" order="ASC" orderby="title" posts="12"]
 
-[post-list type="post" category="sample-category, test-category" order="DESC" orderby="date"]
+[bs-post-list type="post" category="sample-category, test-category" order="DESC" orderby="date"]
 
 Options:
 
@@ -38,9 +38,9 @@ posts: number of posts to display
 
 Use a shortcode like this to display child pages in a page:
 
-[post-grid type="page" post_parent="413" order="ASC" orderby="title" posts="6"]
+[bs-post-grid type="page" post_parent="413" order="ASC" orderby="title" posts="6"]
 
-[post-grid type="page" post_parent="45" order="DESC" orderby="date"]
+[bs-post-grid type="page" post_parent="45" order="DESC" orderby="date"]
 
 Options:
 
@@ -51,6 +51,10 @@ posts: number of pages to display
 
 
 == Changelog ==
+
+    = 1.0.1 - September 17 2020 =
+    
+        * Rename plugin and shortcode
 
     = 1.0.0 - May 04 2020 =
     

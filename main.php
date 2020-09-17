@@ -1,7 +1,7 @@
 <?php
 /*Plugin Name: bS Post / Page Grid / List
-Plugin URI: https://bootscore.me/plugins/post-page-grid-list/
-Description: Displays posts from category or child pages from parent id in your post or page via shortcode. Post Grid [post-grid type="post" category="documentation, category-default" order="ASC" orderby="title" posts="6"], Post List [post-list type="post" category="documentation, category-default" order="DESC" orderby="date" posts="6"], Child Page Grid [post-grid type="page" post_parent="413" order="ASC" orderby="title" posts="6"], Child Page List [post-list type="page" post_parent="413" order="DESC" orderby="date"]
+Plugin URI: https://bootscore.me/plugins/bs-post-page-grid-list/
+Description: Displays posts from category or child pages from parent id in your post or page via shortcode. Post Grid [bs-post-grid type="post" category="documentation, category-default" order="ASC" orderby="title" posts="6"], Post List [bs-post-list type="post" category="documentation, category-default" order="DESC" orderby="date" posts="6"], Child Page Grid [bs-post-grid type="page" post_parent="413" order="ASC" orderby="title" posts="6"], Child Page List [bs-post-list type="page" post_parent="413" order="DESC" orderby="date"]
 Version: 1.0.0
 Author: Bastian Kreiter
 Author URI: https://crftwrk.de
@@ -10,7 +10,7 @@ License: GPLv2
 
 
 // Post Grid Shortcode
-add_shortcode( 'post-grid', 'bootscore_post_grid' );
+add_shortcode( 'bs-post-grid', 'bootscore_post_grid' );
 function bootscore_post_grid( $atts ) {
 	ob_start();
 	extract( shortcode_atts( array (
@@ -74,8 +74,12 @@ function bootscore_post_grid( $atts ) {
                 </small>
                 <?php endif; ?>
                 <!-- Excerpt & Read more -->
-                <div class="card-text mt-auto">
-                    <?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more', 'bootscore'); ?></a>
+                <div class="card-text">
+                    <?php the_excerpt(); ?>
+                </div>
+                            
+                <div class="mt-auto">
+                    <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
                 </div>
                 <!-- Tags -->
                 <?php bootscore_tags(); ?>
@@ -97,7 +101,7 @@ function bootscore_post_grid( $atts ) {
 
 
 // Post List Shortcode
-add_shortcode( 'post-list', 'bootscore_post_list' );
+add_shortcode( 'bs-post-list', 'bootscore_post_list' );
 function bootscore_post_list( $atts ) {
 	ob_start();
 	extract( shortcode_atts( array (
@@ -163,7 +167,7 @@ function bootscore_post_list( $atts ) {
                 <?php endif; ?>
                 <!-- Excerpt & Read more -->
                 <div class="card-text mt-auto">
-                    <?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more', 'bootscore'); ?></a>
+                    <?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
                 </div>
                 <!-- Tags -->
                 <?php bootscore_tags(); ?>
