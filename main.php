@@ -2,7 +2,7 @@
 /*Plugin Name: bS Post / Page Grid / List
 Plugin URI: https://bootscore.me/plugins/bs-post-page-grid-list/
 Description: Displays posts from category or child pages from parent id in your post or page via shortcode. Post Grid [bs-post-grid type="post" category="documentation, category-default" order="ASC" orderby="title" posts="6"], Post List [bs-post-list type="post" category="documentation, category-default" order="DESC" orderby="date" posts="6"], Child Page Grid [bs-post-grid type="page" post_parent="413" order="ASC" orderby="title" posts="6"], Child Page List [bs-post-list type="page" post_parent="413" order="DESC" orderby="date"]
-Version: 1.0.0
+Version: 1.0.2
 Author: Bastian Kreiter
 Author URI: https://crftwrk.de
 License: GPLv2
@@ -43,19 +43,9 @@ function bootscore_post_grid( $atts ) {
             <?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
 
             <div class="card-body d-flex flex-column">
-                <div class="mb-2">
-                    <!-- Category Badge -->
-                    <?php   
-				        $thelist = '';
-				        $i = 0;
-				        foreach( get_the_category() as $category ) {
-				            if ( 0 < $i ) $thelist .= ' ';
-				                $thelist .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" class="badge badge-secondary">' . $category->name.'</a>';
-								$i++;
-				        }
-				        echo $thelist;
-				    ?>
-                </div>
+                
+                <?php bootscore_category_badge(); ?>
+                
                 <!-- Title -->
                 <h2 class="blog-post-title">
                     <a href="<?php the_permalink(); ?>">
@@ -135,19 +125,9 @@ function bootscore_post_list( $atts ) {
         ?>
         <div class="col">
             <div class="card-body">
-                <div class="mb-2">
-                    <!-- Category Badge -->
-                    <?php
-				        $thelist = '';
-				        $i = 0;
-				        foreach( get_the_category() as $category ) {
-				            if ( 0 < $i ) $thelist .= ' ';
-				            $thelist .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" class="badge badge-secondary">' . $category->name.'</a>';
-				            $i++;
-				        }
-				        echo $thelist;
-				    ?>
-                </div>
+                
+                <?php bootscore_category_badge(); ?>
+                
                 <!-- Title -->
                 <h2 class="blog-post-title">
                     <a href="<?php the_permalink(); ?>">
